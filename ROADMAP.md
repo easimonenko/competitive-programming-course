@@ -18,7 +18,7 @@
 
 ## 0.2.0
 
-* A + B sample.
+* A + B samples.
 
 ## 0.1.0
 
