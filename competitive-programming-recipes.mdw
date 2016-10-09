@@ -2,5 +2,6 @@
   <Items>
     <Item>line-io/line-io.sln</Item>
     <Item>a-plus-b/a-plus-b.sln</Item>
+    <Item>array-io/array-io.sln</Item>
   </Items>
 </WorkspaceItem>
