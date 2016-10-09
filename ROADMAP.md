@@ -6,7 +6,7 @@
 
 ## 0.5.0
 
-* Simple samples for arrays.
+* Integer numbers samples.
 
 ## 0.4.0
 
@@ -14,7 +14,7 @@
 
 ## 0.3.0
 
-* Integer numbers samples.
+* Simple samples for arrays.
 
 ## 0.2.0
 
