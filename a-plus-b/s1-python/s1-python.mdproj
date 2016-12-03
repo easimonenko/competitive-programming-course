@@ -7,7 +7,7 @@
     <ProjectGuid>{8A4F7CA1-D15B-49F2-8D19-1A5200DAF47F}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <None Include="main.py" />
