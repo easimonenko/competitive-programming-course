@@ -1,0 +1,148 @@
+% slides-recursion.tex
+% Competitive Programming Course (in Russian)
+% Author: Evgeny Simonenko <easimonenko@mail.ru>
+% License: CC BY-ND 4.0
+
+\documentclass[11pt]{beamer}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphicx}
+
+\usetheme{Boadilla}
+
+\usepackage{listings}
+\lstset{fontadjust=true}
+
+\usepackage{alltt}
+
+\begin{document}
+
+\author{Симоненко Е.А. \\ \texttt{easimonenko@mail.ru}}
+\title{Спортивное программирование}
+\subtitle{Рекурсия и применение её к решению задач}
+\date{2018}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Содержание}
+\tableofcontents
+\end{frame}
+
+\section{Что такое рекурсия}
+
+\begin{frame}[fragile]
+\frametitle{Факториал}
+\[n! = 1 \cdot 2 \cdot ... \cdot (n - 1) \cdot n\]
+\[n! = n \cdot \underbrace{(n - 1) \cdot (n - 2) \cdot ... \cdot 1}_{(n - 1)!}\]
+\[ \left\{
+\begin{array}{l}
+n! = n \cdot (n - 1)! \\
+1! = 1
+\end{array}
+\right. \]
+\begin{lstlisting}[frame=single,language=c]
+int factorial(int n) {
+    return n == 1 ? 1 : factorial(n - 1);
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Примеры}
+
+\begin{frame}[fragile]
+\frametitle{Числа Фибоначчи}
+\[\left\{
+\begin{array}{l}
+F_n = F_{n - 1} + F_{n - 2} \\
+F_1 = 1, F_2 = 2
+\end{array}
+\right.\]
+\begin{lstlisting}[frame=single,language=c]
+int fibonacci(int n) {
+    return n == 1 || n == 2
+        ? 1
+        : fibonacci(n - 1) + fibonacci(n - 2);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Бинарное возведение в степень}
+\[\left\{
+\begin{array}{l}
+x^n = {x^{n / 2}}^2, \text{если} n - \text{чётное} \\
+x^n = x \cdot x^{n - 1}, \text{если} n - \text{нечётное}
+\end{array}
+\right.\]
+\begin{lstlisting}[frame=single,language=c]
+int binpow(int x, int n) {
+    if (n == 1) {
+        return x;
+    } else if (n % 2 == 0) {
+        int h = binpow(x, n / 2);
+        return h * h;
+    } else {
+        return x * binpow(x, n - 1);
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Острова}
+\begin{figure}[h]
+\center
+\begin{alltt}
+.............................. \\
+.*..*..****..*.....*.....****. \\
+.*..*..*.....*.....*.....*..*. \\
+.****..***...*.....*.....*..*. \\
+.*..*..*.....*.....*.....*..*. \\
+.*..*..****..****..****..****. \\
+..............................
+\end{alltt}
+
+\end{figure}
+\end{frame}
+
+\section{Упражнения}
+
+\begin{frame}
+\frametitle{Упражнения на применение рекурсии}
+\begin{itemize}
+	\item \href{https://codeforces.com/problemsets/acmsguru/problem/99999/461}{Wiki Lists}
+	\item \href{https://codeforces.com/contest/60/problem/B}{Время сериала!}
+\end{itemize}
+\end{frame}
+
+\section{Библиография}
+
+\begin{frame}
+\frametitle{Библиография}
+\begin{thebibliography}{1}
+  \bibitem[Порублёв, Ставровский]{PorublevStavrovsky} Порублев И.Н., Ставровский А.Б. Алгоритмы и программы.
+  Решение олимпиадных задач. -- М.: Вильямс, 2007. -- 480 с.
+  \bibitem[Меньшиков]{Menshikov} Меньшиков Ф.В. Олимпиадные задачи по программированию. -- СПб.: Питер,
+  2007. -- 315 с.
+  \bibitem[Мозговой]{Mozgovoy} Мозговой М.В. Занимательное программирование. -- СПб.: Питер, 2005. -- 208 с.
+\end{thebibliography}
+\end{frame}
+
+\section{Ссылки}
+
+\begin{frame}
+\frametitle{Ссылки}
+\begin{itemize}
+	\item \url{https://codeforces.com/}
+	\item \url{http://acm.timus.ru/}
+	\item \url{https://github.com/easimonenko/competitive-programming-course}
+\end{itemize}
+\end{frame}
+
+\end{document}
