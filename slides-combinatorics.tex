@@ -1,0 +1,149 @@
+% slides-combinatorics.tex
+% Competitive Programming Course (in Russian)
+% Author: Evgeny Simonenko <easimonenko@mail.ru>
+% License: CC BY-ND 4.0
+
+\documentclass[11pt]{beamer}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphicx}
+
+\usetheme{Boadilla}
+
+\usepackage{listings}
+\lstset{fontadjust=true}
+
+\usepackage{alltt}
+
+\begin{document}
+
+\author{Симоненко Е.А. \\ \texttt{easimonenko@mail.ru}}
+\title{Спортивное программирование}
+\subtitle{Базовые методы комбинаторной теории}
+\date{2018}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Содержание}
+\tableofcontents
+\end{frame}
+
+\section{Основные определения}
+
+\begin{frame}[fragile]
+\frametitle{Конечные множества}
+...
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Операции над множествами}
+...
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод включений и исключений}
+...
+\end{frame}
+
+\section{Комбинации без повторений}
+
+\begin{frame}[fragile]
+\frametitle{}
+...
+\end{frame}
+
+\section{Комбинации с повторениями}
+
+\begin{frame}[fragile]
+\frametitle{}
+...
+\end{frame}
+
+\section{Примеры}
+
+\begin{frame}[fragile]
+\frametitle{Треугольник Паскаля}
+...
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Генерация всех подмножеств}
+\[
+\begin{array}{l}
+(0,0,0) \leftrightarrow \emptyset \\
+(0,0,1) \leftrightarrow \{c\} \\
+(0,1,0) \leftrightarrow \{b\} \\
+(0,1,1) \leftrightarrow \{b,c\} \\
+(1,0,0) \leftrightarrow \{a\} \\
+(1,0,1) \leftrightarrow \{a,c\} \\
+(1,1,0) \leftrightarrow \{a,b\} \\
+(1,1,1) \leftrightarrow \{a,b,c\}
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Код Грея}
+\[
+\begin{array}{l}
+(0,0,0) \leftrightarrow (0,0,0) \leftrightarrow \emptyset \\
+(0,0,1) \leftrightarrow (0,0,1) \leftrightarrow \{c\} \\
+(0,1,0) \leftrightarrow (0,1,1) \leftrightarrow \{b,c\} \\
+(0,1,1) \leftrightarrow (0,1,0) \leftrightarrow \{b\} \\
+(1,0,0) \leftrightarrow (1,1,0) \leftrightarrow \{a,b\} \\
+(1,0,1) \leftrightarrow (1,1,1) \leftrightarrow \{a,b,c\} \\
+(1,1,0) \leftrightarrow (1,0,1) \leftrightarrow \{a,c\} \\
+(1,1,1) \leftrightarrow (1,0,0) \leftrightarrow \{a\}
+\end{array}
+\]
+\begin{lstlisting}[language=c]
+unsigned int grayencode(unsigned int g) {
+    return g ^ (g >> 1);
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Упражнения}
+
+\begin{frame}
+\frametitle{Упражнения на применение комбинаторных методов}
+\begin{itemize}
+	\item 
+	\item 
+\end{itemize}
+\end{frame}
+
+\section{Библиография}
+
+\begin{frame}
+\frametitle{Библиография}
+\begin{thebibliography}{1}
+  \bibitem[Порублёв, Ставровский]{PorublevStavrovsky} Порублев И.Н., Ставровский А.Б. Алгоритмы и программы.
+  Решение олимпиадных задач. -- М.: Вильямс, 2007. -- 480 с.
+  \bibitem[Меньшиков]{Menshikov} Меньшиков Ф.В. Олимпиадные задачи по программированию. -- СПб.: Питер,
+  2007. -- 315 с.
+  \bibitem[Мозговой]{Mozgovoy} Мозговой М.В. Занимательное программирование. -- СПб.: Питер, 2005. -- 208 с.
+  \bibitem[Грэхем, Кнут, Паташник]{} Грэхем Р., Кнут Д., Паташник О. Конкретная математика. Основания информатики: Пер. 
+  с англ. -- 3-е изд. -- М.: Мир; БИНОМ. Лаборатория знаний, 2009. -- 703 с.
+  \bibitem[Ландо]{} Ландо С.К. Введение в дискретную математику. -- М.: МЦНМО, 2012. -- 265 с.
+\end{thebibliography}
+\end{frame}
+
+\section{Ссылки}
+
+\begin{frame}
+\frametitle{Ссылки}
+\begin{itemize}
+	\item \url{https://codeforces.com/}
+	\item \url{http://acm.timus.ru/}
+	\item \url{https://github.com/easimonenko/competitive-programming-course}
+\end{itemize}
+\end{frame}
+
+\end{document}
