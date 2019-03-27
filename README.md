@@ -24,6 +24,7 @@ _Материалы курса спортивного программирова
 - Базовые методы комбинаторной теории: слайды в [PDF](slides-combinatorics.pdf), [LaTeX](slides-combinatorics.tex)
 - Базовые методы теории графов
 - [Предподсчёт и меморизация](pre-calculation.md)
+- [Множества и мультимножества](sets.md)
 
 ## Коллекция рецептов по олимпиадному программированию на различных языках программирования
 
@@ -59,4 +60,4 @@ _ONLINE_JUDGE_.
 
 ***
 
-(c) 2016, 2018, Симоненко Евгений [easimonenko@mail.ru](mailto:easimonenko@mail.ru)
+(c) 2016, 2018, 2019, Симоненко Евгений [easimonenko@mail.ru](mailto:easimonenko@mail.ru)
